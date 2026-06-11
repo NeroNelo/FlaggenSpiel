@@ -31,7 +31,7 @@ for country in loaded_flags:
             f.write(response.content)
         print(f"Erfolgreich gespeichert unter: {ziel_ordner}")
     else:
-        print(f"Fehler beim Download. Status-Code: {response.status_code}")
+        print(f"Fehler beim Download. Status-Code: {response.status_code}{dateiname}")
 
 
 
