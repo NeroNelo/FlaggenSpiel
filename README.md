@@ -45,17 +45,13 @@ pip install -r requirements.txt
 
 > ⚠️ Diese Schritte müssen **vor dem ersten Start** ausgeführt werden!
 
-1. **Länderdaten laden** – Erstellt die `countries.json` mit allen Länderinformationen:
-   ```bash
-   python country_api.py
-   ```
 
-2. **Flaggen herunterladen** – Lädt alle Flaggen als `.png` in den `flags/` Ordner:
+1. **Flaggen herunterladen** – Lädt alle Flaggen als `.png` in den `flags/` Ordner:
    ```bash
    python flag_loader.py
    ```
 
-3. **App starten:**
+2. **App starten:**
    ```bash
    flet run main.py
    ```
