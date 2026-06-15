@@ -28,7 +28,7 @@ def load_game_data():
         countries_json = load_country_file("countries.json")
         return load_countries(countries_json)
     except FileNotFoundError:
-        logging.critical("countries.json nicht gefunden!")
+        logging.critical("src/countries.json nicht gefunden!")
         return []
     except Exception as e:
         logging.critical(f"Fehler beim Laden der Länderdaten: {e}")
@@ -283,7 +283,7 @@ def Schwer():
 
     def pruefen(e):
         antwort = normalisieren(game["input_text"])
-        richtig = normalisieren(game["current_country"].name)
+        #richtig = normalisieren(game["current_country"].name)
         if antwort == richtig:
             set_game({**game, "feedback": "✅ Richtig!", "input_text": "", "show_next": True, "points": game["points"] + 1})
         elif versuche > 1:
