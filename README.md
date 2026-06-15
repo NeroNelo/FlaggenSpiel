@@ -1,6 +1,9 @@
 # 🌍 Flaggenspiel
 
-Ein Quiz-Spiel zum Lernen von Flaggen der Welt – verfügbar für Desktop und Mobile.
+#run 
+pip install  -r requirements.txt
+
+## Run the app
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![Flet](https://img.shields.io/badge/Flet-Framework-purple)
