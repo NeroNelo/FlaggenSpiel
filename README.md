@@ -1,24 +1,94 @@
-# Flaggenspiel app
+# 🌍 Flaggenspiel
 
-## Run the app
+Ein Quiz-Spiel zum Lernen von Flaggen der Welt – verfügbar für Desktop und Mobile.
 
-### uv
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![Flet](https://img.shields.io/badge/Flet-Framework-purple)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Android%20%7C%20iOS-green)
 
-Run as a desktop app:
+---
+
+## 🎮 Features
+
+- **Leicht** – Wähle den richtigen Ländernamen aus 4 Antworten
+- **Schwer** – Tippe den Ländernamen selbst ein (mit 5 Versuchen)
+- **Highscore** – Bestenliste getrennt nach Schwierigkeitsgrad (Top 10)
+- Sonderzeichen werden automatisch erkannt (z.B. `Cote d'Ivoire` statt `Côte d'Ivoire`)
+- Länderanzahl-Anzeige während des Spiels
+- Speichern des Highscores mit Name und Datum
+
+---
+
+## 📸 Screenshots
+
+| Home | Leicht | Schwer | Highscore |
+|------|--------|--------|-----------|
+| ![Home](docs/images/home.png) | ![Leicht](docs/images/leicht.png) | ![Schwer](docs/images/schwer.png) | ![Highscore](docs/images/highscore.png) |
+
+---
+
+## 🛠️ Installation
+
+### Voraussetzungen
+
+- Python 3.10 oder höher
+- pip
+
+### Abhängigkeiten installieren
 
 ```bash
-uv run flet run
+pip install -r requirements.txt
 ```
 
-Run as a web app:
+### Daten vorbereiten
 
-```bash
-uv run flet run --web
+> ⚠️ Diese Schritte müssen **vor dem ersten Start** ausgeführt werden!
+
+1. **Länderdaten laden** – Erstellt die `countries.json` mit allen Länderinformationen:
+   ```bash
+   python country_api.py
+   ```
+
+2. **Flaggen herunterladen** – Lädt alle Flaggen als `.png` in den `flags/` Ordner:
+   ```bash
+   python flag_loader.py
+   ```
+
+3. **App starten:**
+   ```bash
+   flet run main.py
+   ```
+
+---
+
+## 📁 Projektstruktur
+
 ```
+FlaggenSpiel/
+│
+├── src/                        
+│   ├── assets/                 # Assets Ordner
+│   ├── app.log                 # Log-Datei (automatisch erstellt)
+│   ├── countries.json          # Länderdaten (von country_api.py erstellt)
+│   ├── country.py              # Country Klasse
+│   ├── highscore_leicht.json   # Highscore Leicht (automatisch erstellt)
+│   ├── highscore_schwer.json   # Highscore Schwer (automatisch erstellt)
+│   ├── icon.png                # App Icon (src/)
+│   ├── logic_handler.py        # Laden der Länderdaten
+│   └── main.py                 # Haupt-App (UI & Logik)
+│
+├── .gitignore
+├── country_api.py              # Skript zum Abrufen der Länderdaten
+├── flag_loader.py              # Skript zum Herunterladen der Flaggen
+├── main.spec
+├── README.md
+└── requirements.txt```
 
-For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/).
+---
 
-## Build the app
+## 📱 App bauen
+
+> Für alle Build-Befehle muss Flutter installiert sein. Siehe [Flutter Installation](https://docs.flutter.dev/get-started/install).
 
 ### Android
 
@@ -26,7 +96,7 @@ For more details on running the app, refer to the [Getting Started Guide](https:
 flet build apk -v
 ```
 
-For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
+Für mehr Details zum Signieren: [Android Packaging Guide](https://flet.dev/docs/publish/android/)
 
 ### iOS
 
@@ -34,7 +104,7 @@ For more details on building and signing `.apk` or `.aab`, refer to the [Android
 flet build ipa -v
 ```
 
-For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
+Für mehr Details zum Signieren: [iOS Packaging Guide](https://flet.dev/docs/publish/ios/)
 
 ### macOS
 
@@ -42,7 +112,7 @@ For more details on building and signing `.ipa`, refer to the [iOS Packaging Gui
 flet build macos -v
 ```
 
-For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
+Für mehr Details: [macOS Packaging Guide](https://flet.dev/docs/publish/macos/)
 
 ### Linux
 
@@ -50,7 +120,7 @@ For more details on building macOS package, refer to the [macOS Packaging Guide]
 flet build linux -v
 ```
 
-For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
+Für mehr Details: [Linux Packaging Guide](https://flet.dev/docs/publish/linux/)
 
 ### Windows
 
@@ -58,12 +128,16 @@ For more details on building Linux package, refer to the [Linux Packaging Guide]
 flet build windows -v
 ```
 
-For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
+Für mehr Details: [Windows Packaging Guide](https://flet.dev/docs/publish/windows/)
 
-### Web
+---
 
-```bash
-flet build web -v
-```
+## 🐛 Fehlersuche
 
-For more details on building Web app, refer to the [Web Packaging Guide](https://flet.dev/docs/publish/web/).
+Alle Fehler werden automatisch in `app.log` gespeichert. Bei Problemen einfach diese Datei öffnen und nachschauen.
+
+---
+
+## 📄 Lizenz
+
+Dieses Projekt ist für private und Lernzwecke gedacht.
