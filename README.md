@@ -85,7 +85,8 @@ FlaggenSpiel/
 ├── flag_loader.py              # Skript zum Herunterladen der Flaggen
 ├── main.spec
 ├── README.md
-└── requirements.txt```
+└── requirements.txt
+```
 
 ---
 
@@ -143,4 +144,4 @@ Alle Fehler werden automatisch in `app.log` gespeichert. Bei Problemen einfach d
 
 ## 📄 Lizenz
 
-Dieses Projekt ist für private und Lernzwecke gedacht.
+Dieses Projekt ist privat.
