@@ -85,7 +85,8 @@ FlaggenSpiel/
 ├── flag_loader.py              # Skript zum Herunterladen der Flaggen
 ├── main.spec
 ├── README.md
-└── requirements.txt```
+└── requirements.txt
+```
 
 ---
 
